@@ -1,14 +1,15 @@
-const fs = require("fs")
-const {readJsonFromFile, writeJsonFromFile} = require('./fs-utils')
+let users = [
+    {"id": "1", "banned": true, "name": "Sasha"},
+    {"id": "2", "name": "Artem"}
+]
 
 const getUsers = () => {
-    return readJsonFromFile('./db.json')
+    return users
 }
 
-const addUser = async (name) => {
-    let users = await getUsers()
-    users.push({name: name})
-    return writeJsonFromFile('./db.json', users)
+const addUser = (name) => {
+    debugger
+    users.push({id: 3, name: name})
 }
 
 exports.getUsers = getUsers
