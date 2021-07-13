@@ -1,5 +1,5 @@
 let http = require('http')
-const {getUsers, addUser} = require('./repository')
+const {usersController} = require('./usersController')
 
 const cors = (req, res) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
@@ -20,12 +20,7 @@ const server = http.createServer((req, res) => {
 
     switch(req.url) {
         case '/users':
-            if(req.method === 'POST') {
-                addUser('Dima')
-                res.write(JSON.stringify({success: true}))
-            } else {
-                res.write(JSON.stringify(getUsers()))
-            }
+            usersController(req, res)
             break
         case '/tasks':
             res.write('tasks')
@@ -34,7 +29,6 @@ const server = http.createServer((req, res) => {
             res.write('PAGE NOT FOUND')
     }
 
-    res.end()
 })
 
 server.listen(7542)

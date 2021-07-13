@@ -1,15 +1,14 @@
-let users = [
-    {"id": "1", "banned": true, "name": "Sasha"},
-    {"id": "2", "name": "Artem"}
-]
+let fs = require("fs");
+const {readJsonFromFile, writeJsonToFile} = require('./fs-utils')
 
-const getUsers = () => {
-    return users
+const getUsers = async () => {
+    return await readJsonFromFile('db.json')
 }
 
-const addUser = (name) => {
-    debugger
+const addUser = async (name) => {
+    let users = await getUsers()
     users.push({id: 3, name: name})
+    return await writeJsonToFile('db.json', users)
 }
 
 exports.getUsers = getUsers
