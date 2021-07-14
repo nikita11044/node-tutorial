@@ -1,1 +1,11 @@
-[{"id":"1","banned":true,"name":"Sasha"},{"id":"2","name":"Artem"},{"id":3,"name":"Dima"},{"id":3,"name":"Dima"},{"id":3,"name":"Dima"},{"id":3,"name":"Dima"},{"id":3,"name":"Dima"},{"id":3,"name":"Dima"},{"id":3,"name":"Dima"},{"id":3,"name":"Dima"},{"id":3,"name":"Dima"}]
+[
+  {
+    "id": "1",
+    "banned": true,
+    "name": "Sasha"
+  },
+  {
+    "id": "2",
+    "name": "Artem"
+  }
+]
